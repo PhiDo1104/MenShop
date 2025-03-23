@@ -1,0 +1,93 @@
+header {
+    line-height: 50px;
+}
+
+.header-top {
+    justify-content: space-between;
+    background-color: black;
+    line-height: 50px;
+    color: #fff;
+}
+
+.logo,
+menu,
+.search {
+    flex-grow: 1;
+}
+
+menu {
+    margin-left: -80px;
+}
+
+.logo {
+    margin-top: 6px;
+}
+
+.text,
+.search-icon,
+.cart {
+    line-height: 30px;
+    margin-top: 15px;
+}
+
+
+.products-hot {
+    text-align: center;
+}
+
+.cart {
+    margin-left: 20px;
+}
+
+.call {
+    flex-grow: 1;
+}
+
+.menu .btn {
+    color: #fff;
+}
+
+.btn:hover {
+    color: red;
+}
+
+.ft-top {
+    justify-content: space-between;
+}
+
+.ft-main-items,
+.hd-top-items {
+    justify-content: space-between;
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.ft-main {
+    background-color: #1e1e1e;
+    color: #888;
+}
+
+.ft-item>a,
+h5 {
+    color: #fff;
+}
+
+.chinhsach {
+    width: 20%;
+}
+
+.sp-center {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.sp-center img {
+    padding: 0 10px;
+}
+
+.chitiet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Sản Phẩm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+        }
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            background-color: #2c3e50;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            width: 100%;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #34495e;
+        }
+        .sidebar .active {
+            background-color: #34495e;
+        }
+        .sidebar .submenu {
+            display: none;
+            flex-direction: column;
+        }
+        .sidebar a.submenu-link {
+            padding-left: 30px;
+            background-color: #34495e;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background-color: #ecf0f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+            background-color: white;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        .action-buttons button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            margin-right: 8px;
+        }
+        .action-buttons .fa {
+            font-size: 18px;
+        }
+        .product-image {
+            width: 50px;
+            height: 50px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 600px;
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+            color: #34495e;
+        }
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .form-group {
+            flex: 1;
+            margin-right: 10px;
+        }
+        .form-group:last-child {
+            margin-right: 0;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-group input[type="file"] {
+            padding: 3px;
+        }
+        .form-group select {
+            padding: 9px;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #2ecc71;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="#category" class="main-link" onclick="toggleSubmenu('category-submenu')">Category</a>
+        <div id="category-submenu" class="submenu">
+            <a href="#category-list" class="submenu-link">List</a>
+            <a href="#category-add" class="submenu-link">Add</a>
+            <a href="#category-update" class="submenu-link">Update</a>
+        </div>
+        <a href="#product" class="main-link" onclick="toggleSubmenu('product-submenu')">Product</a>
+        <div id="product-submenu" class="submenu">
+            <a href="#product-list" class="submenu-link">List</a>
+            <a href="#product-add" class="submenu-link">Add</a>
+            <a href="#product-update" class="submenu-link">Update</a>
+        </div>
+        <a href="#account" class="main-link" onclick="toggleSubmenu('account-submenu')">Account</a>
+        <div id="account-submenu" class="submenu">
+            <a href="#account-list" class="submenu-link">List</a>
+            <a href="#account-add" class="submenu-link">Add</a>
+            <a href="#account-update" class="submenu-link">Update</a>
+        </div>
+        <a href="#statistical" class="main-link">Statistical</a>
+        <a href="#setting" class="main-link">Setting</a>
+    </div>
+    <div class="main-content">
+        <table>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Del</th>
+                    <th>Size</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                    <th>Color</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Sản phẩm A</td>
+                    <td><img src="path/to/image.jpg" alt="Sản phẩm A" class="product-image"></td>
+                    <td>$10.00</td>
+                    <td>20%</td>
+                    <td>M</td>
+                    <td>100</td>
+                    <td>Còn hàng</td>
+                    <td>Đỏ</td>
+                    <td class="action-buttons">
+                        <button><i class="fas fa-pen"></i></button>
+                        <button><i class="fas fa-eye"></i></button>
+                        <button><i class="fas fa-check"></i></button>
+                        <button><i class="fas fa-times"></i></button>
+                    </td>
+                </tr>
+                <!-- Thêm các hàng dữ liệu khác tại đây -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function toggleSubmenu(submenuId) {
+            // Ẩn tất cả các submenu trước
+            var submenus = document.querySelectorAll('.submenu');
+            submenus.forEach(function(submenu) {
+                submenu.style.display = 'none';
+            });
+
+            // Hiển thị submenu được nhấp vào
+            var submenu = document.getElementById(submenuId);
+            if (submenu.style.display === "none" || submenu.style.display === "") {
+                submenu.style.display = "flex";
+            } else {
+                submenu.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

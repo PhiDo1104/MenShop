@@ -1,0 +1,72 @@
+body{
+    margin: 0 auto;
+
+}
+.container{
+    
+    max-width: 1400px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    border-radius: 10px;
+   
+}
+.header{
+    margin-top: 20px;
+    display: flex;
+    background-color: #2F4F4F;
+    height: auto;
+    border-radius: 10px;
+    text-align: center;
+}
+.header img{
+    margin: 10px 0px 0px 30px;
+}
+.header h2{
+    color:aliceblue;
+    margin-left: 50px;
+}
+.header a{
+    color: aliceblue;
+    margin-left: 700px;
+    line-height: 60px;
+    
+
+}
+.menu{
+    background-color: #2F4F4F;
+    height: 45px;
+    text-align: center;
+}
+.menu a{
+color: aliceblue;
+line-height: 40px;
+margin: 50px;
+height: 45px;
+width: 30px;
+text-decoration: none;
+}
+.menu a:hover{
+    color: tomato;
+}
+.title{
+   text-align: center; 
+   background-color: #2F4F4F;
+   height: 40px;
+   margin-bottom: 10px;
+}
+.title p{
+    line-height: 40px;
+    font-size: 25px;
+    color: aliceblue
+}
+.form1 input{
+width: 1395px;
+height: 30px;
+margin-bottom: 10px;
+}
+.formsubmit input{
+   width: 100px;
+   height: 30px;
+   border-radius: 10px;
+
+}
